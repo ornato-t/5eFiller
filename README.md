@@ -15,6 +15,10 @@ The out-of-the-box version provides a suitable sheet in Italian. Future releases
 
 You'll also have to download a spell sublist from the 5e.tools "Spells" page ("Download pinned list" button from the hamburger menu on said page)
 
+Both files need to be placed in the `/source` directory before running the app. A sample `spell-sublist.json` file is already present in this repository.
+
+Once you have everything set up just run `node index.js` and the app will take care of the rest. The resulting pdf will be in the `/output` directory and will end in `_filled.pdf`
+
 # Format
 The PDF needs to follow some formatting rules for it to be correctly readable. 
 It needs to be a fillable file with a separate field for each spell row. Each row needs to be named in the following way:  
