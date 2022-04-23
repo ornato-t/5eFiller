@@ -108,11 +108,12 @@ ordered.forEach(row => { //Sort each level by spell name (so every level array i
 let data = Object()
 ordered.forEach((elem, i) => { //Fills the data object with pairs of {field id: text to fill field}
     elem.forEach((item, j) => {
-        data[`${i} ${j}`] = `${item.name} ${item.concentration ? '*' : ''} ${'\xa0'.repeat(40-(item.name.length + 1 + item.book.length + item.book.toString().length))} ${item.book.toUpperCase()}:${item.page}` //Neat trick: create whitespaces by printing as many non-breakaing spaces (\xa0 or 16) as space available. Not perfect because different chars take different amounts of space
+        data[`${i} ${j+1}`] = `${item.name} ${item.concentration ? '*' : ''} ${'\xa0'.repeat(40-(item.name.length + 1 + item.book.length + item.book.toString().length))} ${item.book.toUpperCase()}:${item.page}` //Neat trick: create whitespaces by printing as many non-breakaing spaces (\xa0 or 16) as space available. Not perfect because different chars take different amounts of space
             //WARNING: IF SOMETHING BREAKS IT'S PROBABLY THIS.  On spells with very long spell names (or otherwise many chars in the field) it might trigger a 'RangeError: Invalid count value' error. In that case just raise the hardcoded int (default is 40)
     })
 })
 
+console.log(data)
 
 pdfFiller.fillForm(sourcePDF, destinationPDF, data, function(err) {
     if (err) throw err
