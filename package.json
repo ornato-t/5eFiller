@@ -1,0 +1,28 @@
+{
+  "name": "5efiller",
+  "version": "1.0.0",
+  "description": "Filling D&D character sheets using data pulled from the 5e.tools utility website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ornato-t/5eFiller.git"
+  },
+  "keywords": [
+    "d&d",
+    "5e",
+    "character",
+    "sheet"
+  ],
+  "author": "ornato-t",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/ornato-t/5eFiller/issues"
+  },
+  "homepage": "https://github.com/ornato-t/5eFiller#readme",
+  "dependencies": {
+    "pdffiller": "^0.0.11"
+  }
+}

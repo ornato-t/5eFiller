@@ -1,0 +1,97 @@
+{
+	"fileType": "spells-sublist",
+	"siteVersion": "1.153.2",
+	"items": [
+		{
+			"h": "dominate%20person_phb"
+		},
+		{
+			"h": "raulothim's%20psychic%20lance_ftd"
+		},
+		{
+			"h": "tongues_phb"
+		},
+		{
+			"h": "tasha's%20mind%20whip_tce"
+		},
+		{
+			"h": "see%20invisibility_phb"
+		},
+		{
+			"h": "silvery%20barbs_scc"
+		},
+		{
+			"h": "summon%20aberration_tce"
+		},
+		{
+			"h": "hold%20monster_phb"
+		},
+		{
+			"h": "hunger%20of%20hadar_phb"
+		},
+		{
+			"h": "mind%20sliver_tce"
+		},
+		{
+			"h": "counterspell_phb"
+		},
+		{
+			"h": "cone%20of%20cold_phb"
+		},
+		{
+			"h": "sickening%20radiance_xge"
+		},
+		{
+			"h": "dimension%20door_phb"
+		},
+		{
+			"h": "thunder%20step_xge"
+		},
+		{
+			"h": "lightning%20bolt_phb"
+		},
+		{
+			"h": "alter%20self_phb"
+		},
+		{
+			"h": "greater%20invisibility_phb"
+		},
+		{
+			"h": "gaseous%20form_phb"
+		},
+		{
+			"h": "shield_phb"
+		},
+		{
+			"h": "detect%20magic_phb"
+		},
+		{
+			"h": "hypnotic%20pattern_phb"
+		},
+		{
+			"h": "fire%20bolt_phb"
+		},
+		{
+			"h": "gust_xge"
+		},
+		{
+			"h": "message_phb"
+		},
+		{
+			"h": "minor%20illusion_phb"
+		},
+		{
+			"h": "mage%20hand_phb"
+		},
+		{
+			"h": "prestidigitation_phb"
+		}
+	],
+	"sources": [
+		"PHB",
+		"FTD",
+		"TCE",
+		"SCC",
+		"XGE"
+	]
+}
