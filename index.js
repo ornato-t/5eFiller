@@ -15,8 +15,8 @@ const xge = require('./spells/spells-xge.json')
 const sublist = require('./source/spells-sublist') //User provided spell list from 5e.tools
 
 //PDF stuff
-const sourcePDF = "./source/scheda.pdf"
-const destinationPDF = "./output/scheda_filled.pdf"
+const sourcePDF = "./source/sheet.pdf"
+const destinationPDF = "./output/sheet_filled.pdf"
 
 
 let sub = sublist.items.map(elem => { //Pretty prints every entry and separates spell name from its source
