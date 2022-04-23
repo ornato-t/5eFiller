@@ -116,5 +116,5 @@ ordered.forEach((elem, i) => { //Fills the data object with pairs of {field id: 
 
 pdfFiller.fillForm(sourcePDF, destinationPDF, data, function(err) {
     if (err) throw err
-    console.log("In callback (we're done).")
+    console.log("Conversion complete!")
 })
