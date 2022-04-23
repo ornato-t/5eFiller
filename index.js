@@ -1,7 +1,7 @@
 var pdfFiller = require('pdffiller');
 
-var sourcePDF = "docs/scheda.pdf";
-var destinationPDF = "docs/scheda_filled.pdf";
+var sourcePDF = "source/scheda.pdf";
+var destinationPDF = "output/scheda_filled.pdf";
 var data = {
     "0 1": "Fire Bolt",
     "1 1": "Cure Wounds",
