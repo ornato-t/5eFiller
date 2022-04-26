@@ -1,22 +1,12 @@
 const pdfFiller = require('pdffiller')
 
-//JSON data from 5e.tools here (code needs updates on every folder update. folder SHOULD self update via git)
-const ai = require('./spells/spells-ai.json')
-const aitfr = require('./spells/spells-aitfr-avt.json')
-const egw = require('./spells/spells-egw.json')
-const ftd = require('./spells/spells-ftd.json')
-const ggr = require('./spells/spells-ggr.json')
-const llk = require('./spells/spells-llk.json')
-const phb = require('./spells/spells-phb.json')
-const scc = require('./spells/spells-scc.json')
-const tce = require('./spells/spells-tce.json')
-const xge = require('./spells/spells-xge.json')
-
 const sublist = require('./source/spells-sublist') //User provided spell list from 5e.tools
 
+const spellList = require('./5etools.js') //Spell list, array of all the spells
+
 //PDF stuff
-const sourcePDF = "./source/sheet.pdf"
-const destinationPDF = "./output/sheet_filled.pdf"
+const sourcePDF = './source/sheet.pdf'
+const destinationPDF = './output/sheet_filled.pdf'
 
 
 let sub = sublist.items.map(elem => { //Pretty prints every entry and separates spell name from its source
@@ -30,54 +20,21 @@ let sub = sublist.items.map(elem => { //Pretty prints every entry and separates 
 })
 
 let spells = Array()
-sub.forEach(elem => { //For each spell in the list, open searchSpell loading the correct dataset (book, JSON file) - save the result in spells array
-    switch (elem.src) {
-        case 'ai':
-            spells.push(searchSpell(ai, elem.name, elem.src))
-            break
-        case 'aitfr':
-            spells.push(searchSpell(aitfr, elem.name, elem.src))
-            break
-        case 'egw':
-            spells.push(searchSpell(egw, elem.name, elem.src))
-            break
-        case 'ftd':
-            spells.push(searchSpell(ftd, elem.name, elem.src))
-            break
-        case 'ggr':
-            spells.push(searchSpell(ggr, elem.name, elem.src))
-            break
-        case 'llk':
-            spells.push(searchSpell(llk, elem.name, elem.src))
-            break
-        case 'phb':
-            spells.push(searchSpell(phb, elem.name, elem.src))
-            break
-        case 'scc':
-            spells.push(searchSpell(scc, elem.name, elem.src))
-            break
-        case 'tce':
-            spells.push(searchSpell(tce, elem.name, elem.src))
-            break
-        case 'xge':
-            spells.push(searchSpell(xge, elem.name, elem.src))
-            break
-    }
-});
-
-function searchSpell(src, name, book) { //Search for a match in the matching dataset. When found, retrieve some data and prune the rest
+sub.forEach(elem => { //For each spell in the list,look for a match in the whole dataset. When found, retrieve some data and prune the rest - save the result in spells array
     let entry = Object()
-    src.spell.forEach(spell => {
-        if (spell.name.toLowerCase() === name) {
+
+    spellList.forEach(spell => {
+        if (spell.name.toLowerCase() === elem.name.toLowerCase() && spell.source.toLowerCase() === elem.src.toLowerCase()) {
             entry.name = spell.name
             entry.level = spell.level
             entry.page = spell.page
-            entry.book = book
+            entry.book = elem.src
             if (spell.duration[0].concentration) entry.concentration = true
         }
     })
-    return entry
-}
+
+    spells.push(entry)
+});
 
 let ordered = [ //Data structure for spells (divided by level)
     [],
@@ -117,5 +74,5 @@ console.log(data)
 
 pdfFiller.fillForm(sourcePDF, destinationPDF, data, function(err) {
     if (err) throw err
-    console.log("Conversion complete!")
+    console.log('Conversion complete!')
 })
