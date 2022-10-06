@@ -6,6 +6,7 @@ At the moment this app only allows filling of a spell list. Future releases migh
 Requirements:
 * nodeJS
 * npm
+* [PDF Toolkit](https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/)
   
 Clone the app and run `npm i` in order to download the app's dependencies.
 
@@ -25,4 +26,4 @@ It needs to be a fillable file with a separate field for each spell row. Each ro
 `SPELL_LEVEL <space> ROW_NUMBER` with ROW_NUMBER starting from 1.  
 For example the first level 1 spell would be `1 1`, the second `1 2` and so on. Cantrips are considered as 0th level spells.
 
-Note that the resulting PDF will no longer be fillable, therefore  any edit to the sheet should be done separately before running the app.
+The resulting PDF will still be fillable. Alternatively, it's possible to make it non-fillable (thereby flattening any form field) by setting `EDITABLE = false` in the code.
